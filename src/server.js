@@ -1,15 +1,21 @@
 import express from "express";
+import dotenv from "dotenv";
+import connectDB from "./db.js";
+
+dotenv.config();
 
 const app = express();
 
- const PORT=3000;
+const PORT = process.env.PORT || 3000;
 
- app.get("/",(req,res)=>{
+connectDB();
+
+app.get("/", (req, res) => {
     res.json({
-        message:"Task Manager API is running"
+        message: "Task Manager API is running"
     });
- });
+});
 
- app.listen(PORT,()=>{
+app.listen(PORT, () => {
     console.log(`Server running http://localhost:${PORT}`);
- });
+});
