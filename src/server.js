@@ -10,6 +10,6 @@ const app = express();
     });
  });
 
- app.listen(PORT,()=>{{
+ app.listen(PORT,()=>{
     console.log(`Server running http://localhost:${PORT}`);
- }})
+ });
